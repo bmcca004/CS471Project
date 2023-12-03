@@ -1,0 +1,8 @@
+-------:Priority Stats:--------
+Total Number of Process: 500
+Total time: 14731.0
+Throughput: 21.116
+CPU utilization: 71.67198425089947 %
+Average waiting time: 29.462
+Average turnaround time: 0.0
+Average response time: 0.0

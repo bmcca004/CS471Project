@@ -1,0 +1,8 @@
+-------:FIFO Stats:--------
+Total Number of Process: 500
+Total time: 14746.0
+Throughput: 21.116
+CPU utilization: 71.59907771599077 %
+Average waiting time: 0.03
+Average turnaround time: 63.816
+Average response time: 21.584

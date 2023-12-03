@@ -1,0 +1,8 @@
+-------:SJF Stats:-------- 
+Total Number of Process: 500
+Total time: 14744.0
+Throughput: 21.116
+CPU utilization: 71.60879001627781 %
+Average waiting time: 75.118
+Average turnaround time: 94.684
+Average response time: 54.002
