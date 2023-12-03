@@ -15,7 +15,7 @@ class Process implements  Comparable<Process>
     String arrivalTime;
     String priority;
     String cpuBurstUnits;
-
+//Process is used as a structure to store the data gotten from the file.
     public Process( String arrivalTime,  String burstTime, String priority)
     {
 
@@ -26,7 +26,7 @@ class Process implements  Comparable<Process>
 
 
 
-
+//Overrides the compareTo method to work with a Process structure
     @Override
     public int compareTo(Process process)
     {
@@ -40,7 +40,9 @@ class Process implements  Comparable<Process>
     }
 }
 
+//The class the contains each of the three algorithms
  class CPUSchec {
+    //The variables
     double totalTime, totalWaitTime, totalBurstTime, totalTurnAroundTime, totalResponseTime = 0;
     double totalProcesses = 500;
     double averageWaitingTime = totalWaitTime/totalProcesses;
@@ -48,13 +50,14 @@ class Process implements  Comparable<Process>
      double averageResponseTime = totalResponseTime/totalProcesses;
 
      double throughput, cpuUtility = 0;
-     ArrayList<Process> input;
+
      ArrayList<Process> fifoCopy;
 
      ArrayList<Process> sjfCopy;
      ArrayList<Process> priorityCopy;
-
-     String file = "C:\\Users\\chaos\\Downloads\\Datafile1-txt.txt";
+//Used for testing
+     //String file = "C:\\Users\\chaos\\Downloads\\Datafile1-txt.txt";
+    //Reads the .txt in line by line stores each element as a String
      public static ArrayList<Process> readFileintoArrayList(String file) throws IOException, FileNotFoundException {
          String filePath =  file;
          ArrayList<Process> reading = new ArrayList<>();
@@ -78,7 +81,7 @@ class Process implements  Comparable<Process>
 
 
 
-
+//The FIFO
      public void FIFO(ArrayList<Process>input) throws FileNotFoundException {
          totalTime =0;
          totalWaitTime=0;
@@ -143,8 +146,8 @@ class Process implements  Comparable<Process>
          averageWaitingTime = waitTime/totalProcesses;
          cpuUtility = (totalBurstTime/totalTime)*100;
          averageResponseTime= totalResponseTime/totalProcesses;
+         //Writes to file
          PrintStream out = new PrintStream(new File("FIFO.txt"));
-         PrintStream console = System.out;
          System.setOut(out);
          System.out.println("-------:FIFO Stats:--------");
          System.out.print("Total Number of Process: ");
@@ -166,6 +169,7 @@ class Process implements  Comparable<Process>
 
 
      }
+     //SJF
      public void SJF(ArrayList<Process>input) throws FileNotFoundException {
          totalTime =0;
          totalWaitTime=0;
@@ -202,6 +206,7 @@ class Process implements  Comparable<Process>
              {
 
                  if(working.size() >0)
+                 //Sorts based off of CPU Burst Length
                  {Collections.sort(working);}
 
                  int arrivalTime =Integer.valueOf(working.get(0).arrivalTime);
@@ -253,8 +258,8 @@ class Process implements  Comparable<Process>
          averageWaitingTime = totalWaitTime/totalProcesses;
          cpuUtility = (totalBurstTime/totalTime)*100;
          averageResponseTime= totalResponseTime/totalProcesses;
+         //Write to File
          PrintStream out = new PrintStream(new File("SJF.txt"));
-
          System.setOut(out);
          System.out.println("-------:SJF Stats:-------- ");
          System.out.print("Total Number of Process: ");
