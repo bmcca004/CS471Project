@@ -1,6 +1,6 @@
 # CS471Project
 
-This is a class project for ODU's CS471 Fall 2023 class done by Bryan McCauley.
+This is a class project for ODU's CS471 Fall 2023 class done by Bryan McCauley. It uses Java as the programming language. And SDK 1.8 corretto-1.8.
 The requirements as follows:
 CS471/571: Operating System Concepts
 Fall 2023 Course
